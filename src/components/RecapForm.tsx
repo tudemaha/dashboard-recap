@@ -1,10 +1,16 @@
 import { Stack, Textarea } from "@chakra-ui/react";
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
-import { useState } from "react";
+import React, { useState } from "react";
 import getRecap from "@/utils/getRecap";
+import parseInput from "@/utils/parseInput";
+import ChartData from "@/interfaces/chartData";
 
-export default function RecapForm() {
+interface RecapFormProps {
+	setRecap: React.Dispatch<React.SetStateAction<ChartData>>;
+}
+
+export default function RecapForm({ setRecap }: RecapFormProps) {
 	const [response, setResponse] = useState("");
 	const [invalid, setInvalid] = useState(false);
 
@@ -16,8 +22,11 @@ export default function RecapForm() {
 		}
 
 		if (response.length !== 0) {
-			const test = getRecap(response);
-			console.log(test);
+			const parsedInput = parseInput(response);
+			if (parsedInput) {
+				const recap = getRecap(parsedInput);
+				setRecap(recap);
+			}
 		}
 	};
 

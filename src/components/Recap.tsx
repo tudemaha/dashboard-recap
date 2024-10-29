@@ -1,22 +1,23 @@
+import ChartData from "@/interfaces/chartData";
 import { Chart } from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 
 Chart.register();
 
-export default function Recap() {
+interface RecapProps {
+	recapData: ChartData;
+	classId: string;
+}
+
+export default function Recap({ recapData, classId }: RecapProps) {
 	return (
 		<Bar
 			data={{
-				labels: [
-					"Ahead of Schedule",
-					"On An Ideal Schedule",
-					"Lagging Behind",
-					"Need Special Attention",
-				],
+				labels: recapData.labels,
 				datasets: [
 					{
-						data: [10, 4, 3, 1],
-						backgroundColor: ["#93c5fd", "#bbf7d0", "#ffe308", "#fca5a5"],
+						data: recapData.data,
+						backgroundColor: recapData.colors,
 						borderWidth: 1,
 					},
 				],
@@ -25,7 +26,7 @@ export default function Recap() {
 				plugins: {
 					title: {
 						display: true,
-						text: "Recap of CC-04 Students Status",
+						text: `Recap of ${classId} Students Status`,
 						color: "#fafafa",
 						font: {
 							size: 14,

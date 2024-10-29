@@ -2,7 +2,7 @@ import { Stack, Heading, Highlight } from "@chakra-ui/react";
 
 export default function Title() {
 	return (
-		<Stack paddingTop="3">
+		<Stack paddingTop="4">
 			<Heading size="4xl" textAlign="center">
 				Dashboard Recap
 			</Heading>
