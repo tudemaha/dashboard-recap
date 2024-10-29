@@ -2,6 +2,7 @@ import { Stack, Textarea } from "@chakra-ui/react";
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
 import { useState } from "react";
+import getRecap from "@/utils/getRecap";
 
 export default function RecapForm() {
 	const [response, setResponse] = useState("");
@@ -12,6 +13,11 @@ export default function RecapForm() {
 			setInvalid(true);
 		} else {
 			setInvalid(false);
+		}
+
+		if (response.length !== 0) {
+			const test = getRecap(response);
+			console.log(test);
 		}
 	};
 
