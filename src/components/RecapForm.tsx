@@ -29,6 +29,7 @@ export default function RecapForm() {
 					width="50rem"
 					variant="outline"
 					onChange={(e) => setResponse(e.target.value)}
+					autoFocus
 				/>
 			</Field>
 			<Button onClick={handleRecap}>Get Recap</Button>

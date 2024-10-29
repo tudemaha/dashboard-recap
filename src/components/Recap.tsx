@@ -41,8 +41,26 @@ export default function Recap() {
 							color: "#fafafa",
 						},
 						beginAtZero: true,
+						border: {
+							display: true,
+						},
+						grid: {
+							color: "rgba(250, 250, 250, 0.3)",
+							display: true,
+							drawOnChartArea: true,
+							drawTicks: true,
+						},
 					},
 					x: {
+						border: {
+							display: true,
+						},
+						grid: {
+							color: "rgba(250, 250, 250, 0.3)",
+							display: true,
+							drawOnChartArea: true,
+							drawTicks: true,
+						},
 						ticks: {
 							color: "#fafafa",
 						},
