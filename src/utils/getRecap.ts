@@ -12,7 +12,7 @@ const getRecap = (persons: Person[]): ChartData => {
 			case "Ahead of Schedule":
 				ahead++;
 				break;
-			case "On An Ideal Schedule":
+			case "On Ideal Schedule":
 				ideal++;
 				break;
 			case "Lagging Behind":
