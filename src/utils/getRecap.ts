@@ -27,7 +27,7 @@ const getRecap = (persons: Person[]): ChartData => {
 	const chartData: ChartData = {
 		labels: [
 			"Ahead of Schedule",
-			"On An Ideal Schedule",
+			"On Ideal Schedule",
 			"Lagging Behind",
 			"Need Special Attention",
 		],
